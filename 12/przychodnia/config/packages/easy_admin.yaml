@@ -1,0 +1,48 @@
+easy_admin:
+    user:
+        name_property_path: email
+    site_name: 'Przychodnia testowa'
+    formats:
+        datetime: 'd/m/Y H:i'
+    design:
+        menu:
+            - { entity: 'Patient', icon: 'user' }
+            - { entity: 'Doctor', icon: 'user-nurse'}
+            - { entity: 'Visit', icon: 'calendar'}
+            - { entity: 'Specialization'}
+    entities:
+        Doctor:
+            translation_domain: doctor
+            class: App\Entity\Doctor
+            show:
+                fields:
+                 - 'firstName'
+                 - 'lastName'
+                 - 'specialization'
+                 - { property: 'visits', template: 'admin/visits.html.twig'}
+            search:
+                fields:
+                 - 'firstName'
+                 - 'lastName'
+                 - 'specialization.name'
+        Visit:
+            class: App\Entity\Visit
+        Specialization:
+            class: App\Entity\Specialization
+        Patient:
+            class: App\Entity\Patient
+            show:
+                fields:
+                 - {property: 'firstName'}
+                 - {property: 'lastName'}
+            edit:
+                fields:
+                    - {property: 'firstName'}
+                    - {property: 'lastName'}
+            list:
+                fields:
+                    - {property: 'id'}
+                    - {property: 'firstName'}
+                    - {property: 'lastName'}
+    list:
+        actions: ['show']
