@@ -1,0 +1,14 @@
+Visits: Wizyty
+Visit: Wizyta
+Specialization: Specjalizacja
+Last name: Nazwisko
+First name: Imie
+Doctor: Lekarz
+Patient: Pacjent
+Start date: Czas początku
+End date: Czas zakończenia
+welcome message:  Witamy w naszej przychodni
+action.new: Dodaj
+action.show: Pokaż
+action.edit: Edytuj
+action.delete: Usuń
